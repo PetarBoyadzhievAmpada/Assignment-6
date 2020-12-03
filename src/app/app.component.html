@@ -19,9 +19,9 @@
   <hr>
   <div class="form-group">
     <label for="Subscription">Subscription</label>
-    <select id="Subscription" class="form-control" [ngModel] = "defaultSubscription" name = "Subscription">
+    <select id="Subscription" class="form-control" name = "Subscription">
       <option value="Basic">Basic</option>
-      <option value="Advanced">Advanced</option>
+      <option value="Advanced" selected>Advanced</option>
       <option value="Pro">Pro</option>
     </select>
   </div>
@@ -38,7 +38,7 @@
       />
     </div>
   
-    <button class="btn btn-primary" type="submit" [disabled]="">
+    <button class="btn btn-primary" type="submit" >
       Submit
     </button>
     <span class="help-block" *ngIf="!f.valid && f.touched"
@@ -49,7 +49,7 @@
 </div>
 </div>
 <hr>
-<div class="row" *ngIf= "submitted">
+<div class="row" *ngIf= "user.email && user.subscription && user.password" >
 <div class="col-xs-12">
 <h3>Your Data</h3>
 <p>Email: {{user.email}} </p>
